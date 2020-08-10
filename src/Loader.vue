@@ -14,7 +14,7 @@ export default {
       },
       loaderType: {
           type: String,
-          default: 'gears'
+          default: 'default'
       },
   },
   data(){
