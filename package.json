@@ -1,6 +1,6 @@
 {
   "name": "vueloaderspinners",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/Loader.umd.js",
   "module": "dist/Loader.esm.js",
   "unpkg": "dist/Loader.min.js",
