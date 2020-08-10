@@ -1,11 +1,19 @@
 {
-  "name": "loaders",
+  "name": "vueloaderspinner",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/Loader.umd.js",
+  "module": "dist/Loader.esm.js",
+  "unpkg": "dist/Loader.min.js",
+  "browser": {
+    "./sfc": "src/Loader.vue"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
+    "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/Loader.umd.js",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/Loader.esm.js",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/Loader.min.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
